@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Book.css">
+</head>
+<body>
+
+  <!-- Header with Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">BookStore</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" onclick="openModal()">Contact</a></li>
+        </ul>
+        <form class="form-inline ml-3">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Book Details -->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSsvPtC9sdaybgHOdGx4QEDrJgHayXUmT0rwEKHlgsHOok5hUJr" class="img-fluid" alt="Book Cover">
+      </div>
+      <div class="col-md-8">
+        <h3>Dune</h3>
+        <h5>Author:  Frank Herbert</h5>
+        <p class="text-muted">Publication Date: 1965</p>
+        <h4>$99.99</h4>
+        <p>Dune is a 1965 epic science fiction novel by American author Frank Herbert, originally published as two separate serials in Analog magazine. It tied with Roger Zelazny's This Immortal for the Hugo Award for Best Novel and won the inaugural Nebula Award for Best Novel in 1966</p>
+        <button class="btn btn-primary mr-2" onclick="location.href='cart.html';">Add to Cart</button>
+        <button class="btn btn-secondary">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h4>About the Author</h4>
+        <p>Franklin Patrick Herbert Jr. was an American science-fiction author, best known for his 1965 novel Dune and its five sequels. He also wrote short stories and worked as a newspaper journalist, photographer, book reviewer, ecological consultant, and lecturer</p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h4>Reviews</h4>
+        <div class="media mb-4">
+                    <!--<img src="user1.jpg" class="mr-3" alt="User 1" style="width:64px;">-->
+          <div class="media-body">
+            <h5 class="mt-0">Swasthik Prabhu</h5>
+            <p>This book is fantastic! The plot is gripping and the characters are well-developed. Highly recommend!</p>
+          </div>
+        </div>
+        <div class="media mb-4">
+                    <!--<img src="user2.jpg" class="mr-3" alt="User 2" style="width:64px;">-->
+          <div class="media-body">
+            <h5 class="mt-0">Yash</h5>
+            <p>The literary work "dune," penned by Robert Kiyosaki, is a timeless guide to financial literacy that imparts significant knowledge on capital accumulation and achieving economic autonomy. This written masterpiece has retained its status as an all-time favorite for over twenty years now and continues to be instrumental in empowering countless individuals worldwide towards managing their monetary affairs effectively.</p>
+          </div>
+        </div>
+        <div class="media mb-4">
+          <!--<img src="user3.jpg" class="mr-3" alt="User 3" style="width:64px;">-->
+          <div class="media-body">
+            <h5 class="mt-0">Pratik</h5>
+            <p>
+                "dune" is a thought-provoking exploration of financial mindset and strategies that challenges traditional notions of money. The author shares his experiences growing up with two father figures — one emphasizing job security and the other promoting financial independence through investing and entrepreneurship.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Modal Popup -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>Contact Us</h2>
+          <form id="contactForm" action="#" method="post">
+              <label for="name">Your Name:</label><br>
+              <input type="text" id="name" name="name" required><br>
+  
+              <label for="email">Your Email:</label><br>
+              <input type="email" id="email" name="email" required><br>
+  
+              <label for="message">Your Message:</label><br>
+              <textarea id="message" name="message" rows="4" required></textarea><br>
+  
+              <input type="submit" value="Send Message">
+          </form>
+      </div>
+  </div>
+  
+  <script>
+      // JavaScript functions to show and hide modal
+      function openModal() {
+          document.getElementById('myModal').style.display = "block";
+      }
+      function closeModal() {
+          document.getElementById('myModal').style.display = "none";
+      }
+  
+      // JavaScript function to handle form submission
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent page from reloading
+          // Add AJAX code here to submit form data without leaving the page
+          // For example, you can use Fetch API or XMLHttpRequest
+          // After form submission, you can close the modal or display a success message
+          closeModal(); // Close modal after form submission (example)
+          alert('Form submitted successfully!'); // Example success message
+      });
+  </script>
+  <!-- Footer -->
+  <footer class="bg-light text-center text-lg-start">
+    <div class="container p-4">
+      <div class="row">
+        
+      </div>
+    </div>
+    <div class="text-center p-3">
+      © 2023 BookStore:
+      <a class="text-dark" href="#">Privacy Policy</a> |
+      <a class="text-dark" href="#">Terms of Service</a> |
+      <a class="text-dark" href="#">Contact</a>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
